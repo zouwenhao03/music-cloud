@@ -1,0 +1,22 @@
+<!-- index.wxml -->
+<view class="index-container">
+<!-- search -->
+<view class="search-part">
+  <view class="search-input">
+  <input type="text" placeholder="搜索歌曲" />
+  </view>
+  <text class="iconfont icon-sousuo"></text>
+</view>
+  <!-- swiper -->
+  <view class="swiper-container" >
+    <swiper class="swiper" 	indicator-dots 	indicator-active-color="#C62F2F" autoplay >
+      <block wx:for="{{bannerList}}" wx:key="*this">
+        <swiper-item class="item">
+          <view class="swiper-item {{item}}">
+            <image src="{{item.imageUrl}}" />
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+</view>
