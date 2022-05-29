@@ -1,15 +1,14 @@
 <!-- index.wxml -->
 <view class="index-container">
-<!-- search -->
-<view class="search-part">
-  <view class="search-input">
-  <input type="text" placeholder="搜索歌曲" />
+  <!-- search -->
+  <view class="search-part">
+    <image class="logo-img" src="../../images/video/video.jpg" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+    <view class="search-input">搜索歌曲</view>
+    <image class="logo-img" src="../../images/logo.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
   </view>
-  <text class="iconfont icon-sousuo"></text>
-</view>
   <!-- swiper -->
-  <view class="swiper-container" >
-    <swiper class="swiper" 	indicator-dots 	indicator-active-color="#C62F2F" autoplay >
+  <view class="swiper-container">
+    <swiper class="swiper" indicator-dots indicator-active-color="#C62F2F" autoplay>
       <block wx:for="{{bannerList}}" wx:key="*this">
         <swiper-item class="item">
           <view class="swiper-item {{item}}">
@@ -17,6 +16,55 @@
           </view>
         </swiper-item>
       </block>
+    </swiper>
+  </view>
+  <!-- nav -->
+  <view class="nav-part" hover-class="none" hover-stop-propagation="false">
+    <view class="nav-item">
+      <text class="iconfont icon-tuijianfenxiang"></text>
+      <text class="item-word">每日推荐</text>
+    </view>
+    <view class="nav-item">
+      <text class="iconfont icon-zhibo"></text>
+      <text class="item-word">直播</text>
+    </view>
+    <view class="nav-item">
+      <text class="iconfont icon-diantai"></text>
+      <text class="item-word">电台</text>
+    </view>
+    <view class="nav-item">
+      <text class="iconfont icon-paixingbang"></text>
+      <text class="item-word">排行榜</text>
+    </view>
+    <view class="nav-item">
+      <text class="iconfont icon-icon- "></text>
+      <text class="item-word">歌单</text>
+    </view>
+  </view>
+  <!-- suggest -->
+  <view class="suggest-part">
+    <navHeader title="推荐歌曲" item="为你精心的推荐"></navHeader>
+    <scroll-view class="suggest-scroll" enable-flex="true" scroll-x="true">
+      <view class="scroll-item" wx:for="{{recommendList}}" wx:key="id">
+        <image class="item-img" src="{{item.picUrl}}"></image>
+        <text class="item-text">{{item.name}}</text>
+      </view>
+    </scroll-view>
+  </view>
+  <!--  -->
+  <view class="topList-part">
+    <navHeader title="排行榜" item="热歌风向标"></navHeader>
+    <swiper class="topList-swiper" next-margin="100rpx">
+      <swiper-item class="top-item" wx:for="{{topList}}" wx:key="ToplistType" wx:if="{{item.tracks.length !==0}}">
+        <view class="item-container">
+          <view class="top-name">{{item.name}}</view>
+          <view class="item-detail" wx:for="{{item.tracks}}" wx:key="index">
+            <text class="item-index">{{index+1}}</text>
+            <text class="item-name">{{item.first}}</text>
+            <text class="item-art">{{item.second}}</text>
+          </view>
+        </view>
+      </swiper-item>
     </swiper>
   </view>
 </view>

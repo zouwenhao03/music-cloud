@@ -1,0 +1,21 @@
+<view class="login-part">
+    <view class="logo-part" hover-class="none" hover-stop-propagation="false">
+        <image src="../../images/logo.png" />
+    </view>
+    <view class="login-form">
+        <view class="user-phone">
+            <text class="txt">手机号</text>
+            <input placeholder="手机号码" placeholder-class="input-pl" auto-focus data-type="phone" id="phone" bindinput="handleInput" />
+        </view>
+        <view class="user-phone">
+            <text class="txt">验证码</text>
+            <input placeholder="验证码" type="password" placeholder-class="input-pl" data-type='captcha' id="captcha" bindinput="handleInput" />
+            <button class="chatcha-btn" bindtap="getChpcthaNum" 	disabled="{{captchaDisable}}">{{ captchamsg}}</button>
+      </view>
+        <button bindtap="login" class="login-button">登录</button>
+    </view>
+    <view class="footer" hover-class="none" hover-stop-propagation="false">
+        <view class="first">云音乐·音乐的力量</view>
+        <view class="second">—— 云音乐支持IPv6网络 ——</view>
+    </view>
+</view>

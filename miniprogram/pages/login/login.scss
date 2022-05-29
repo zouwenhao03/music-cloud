@@ -1,0 +1,66 @@
+.login-part {
+  width: 100%;
+  background-color: #d43c33;
+  height: 100vh;
+  .logo-part {
+    text-align: center;
+    padding: 100rpx;
+    image {
+      width: 200rpx;
+      height: 200rpx;
+    }
+  }
+  .login-form {
+    width: 75%;
+    height: 400rpx;
+   // border: 1px solid black;
+    margin: 0 auto;
+    font-size: 32rpx;
+    .input-pl{
+        color: #fff;
+        font-size: 26rpx;
+    }
+    .chatcha-btn{
+        width: 245rpx;
+        border-radius: 50rpx;
+        color: #d43c33;
+    }
+    .user-phone {
+      height: 100rpx;
+      line-height: 100rpx;
+      display: flex;
+      align-items: center;
+      .txt{
+          line-height: 0rpx;
+          color: #fff;
+          margin-right: 20rpx;
+      }
+      input{
+         flex: 1;
+         border-bottom: 1px solid #fff;
+         height: 60rpx;
+      }
+    }
+    .login-button{
+        margin-top: 20rpx;
+        width: 100%;
+        height: 80rpx;
+        border-radius: 40rpx;
+        color: #d43c33;
+    }
+  }
+  .footer{
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -50%); /* 50%为自身尺寸的一半 */
+      -webkit-transform: translate(-50%, -50%);
+      bottom: 200rpx;
+      color: #fff;
+      .first{
+          font-size: 38rpx;
+      }
+      .second{
+          font-size: 20rpx;
+      }
+  }
+}

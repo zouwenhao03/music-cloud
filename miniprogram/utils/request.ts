@@ -9,7 +9,9 @@ export default function service(url: string, data: object, method: any='GET') {
                      resolve(res.data)
                 },
                 fail:(err)=>{
+                    console.log(err,133333)
                     reject(err)
+                    
                 }
             })
     })
