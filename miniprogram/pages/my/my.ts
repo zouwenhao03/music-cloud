@@ -6,7 +6,8 @@ Page({
         userInfo:{},
         userId:null,
         years:0,
-        level:0
+        level:0,
+        
     },
     onLoad(){
         if(wx.getStorageSync('userId')){

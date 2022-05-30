@@ -1,6 +1,6 @@
 .my-part {
   width: 100%;
-  background-color: #eff2f6;
+  background-color: #d7dbdf;
   position: relative;
   .my-background {
     image {
@@ -10,8 +10,9 @@
   }
   .my-detail {
     width: 88%;
-    height: 350rpx;
+    height: 400rpx;
     border: 1px solid #ffffff;
+    border: 1px solid black;
     margin: 0 auto;
     position: absolute;
     top: 550rpx;
@@ -46,17 +47,34 @@
             font-size: 42rpx;
             font-weight: bold;
         }
-        .signature{
+        .follow-part{
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          .follow-num{
+            display: flex;
             font-size: 32rpx;
-            overflow: hidden;
+            color:#6F6F6F ;
+          }.follow-txt{
+            color: black;
+            padding-left: 10rpx;
+            padding-right: 20rpx;
+          }
+        }
+        .signature{
+            font-size: 30rpx;
             text-align: left;
-            padding: 20rpx;
+            padding: 15rpx;
             padding-bottom: 0;
-            padding-top: 10rpx;
+            padding-top: 10;
+            display: flex;
             .title{
                 font-size: 28rpx;
                 color: #6F6F6F;
                 margin-right: 10rpx;
+            }
+            .title1{
+                width: 100rpx;
             }
         }
       }
