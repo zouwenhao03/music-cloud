@@ -1,0 +1,24 @@
+<view class="my-part" >
+    <!-- background -->
+    <view class="my-background">
+        <!-- <image src="https://p1.music.126.net/tojXWgSmIOgxBxp3RyQrrQ==/109951162928333403.jpg" /> -->
+        <image src="{{userInfo.backgroundUrl}}" />
+    </view>
+    <!-- my-detail -->
+    <view class="my-detail" >
+        <view class="detail-container">
+            <view class="my-avatar">
+                <!-- <image src="https://p3.music.126.net/tAI2zpzpa7BS7iY8LjH09Q==/1386484165613265.jpg" /> -->
+                <image src="{{userInfo.avatarUrl}}" />
+            </view>
+            <view class="my-txt">
+                <text class="nickName">{{userInfo.nickname}}</text>
+                <text class="signature"><text class="title">村龄:</text> {{years}}年</text>
+                <text class="signature"><text class="title">性别:</text>{{userInfo.gender==1?'男':'女'}}</text>
+                <text class="signature"><text class="title">level:</text>{{level}}</text>
+                <text class="signature"><text class="title">个人简介:</text>{{userInfo.signature}}</text>
+                
+            </view>
+        </view>
+    </view>
+</view>

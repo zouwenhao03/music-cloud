@@ -1,0 +1,7 @@
+<view class='wx-toast-box' animation="{{animationData}}">
+  <view class='wx-toast-content'>
+    <image src="../../images/charge/error.png" wx:if="{{icon=='error'}}" ></image>
+    <image src="../../images/charge/success.png" wx:if="{{icon=='success'}}" ></image>
+    <view class='wx-toast-toast'>{{ content }}</view>
+  </view>
+</view>

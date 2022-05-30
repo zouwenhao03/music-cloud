@@ -5,8 +5,16 @@ export default function service(url: string, data: object, method: any='GET') {
                 url:`${config.host}${url}`,
                 data:data,
                 method:method,
-                success:(res)=>{
-                     resolve(res.data)
+                success:(res:any)=>{
+                    if(res.statusCode == 200){
+                        resolve(res.data)
+                    }else{
+                        wx.showToast({
+                            title:res.data.message,
+                            icon:'none'
+                        })
+                    }
+                    
                 },
                 fail:(err)=>{
                     console.log(err,133333)

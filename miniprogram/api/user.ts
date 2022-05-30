@@ -12,3 +12,7 @@ export function verifyCaptcha(phone:string,captcha:string){
 export function logina(phone:string,captcha:string){
     return service(`/login/cellphone?phone=${phone}&captcha=${captcha}`,{})
 }
+//获取用户信息
+export function getUserInfo(userId:string){
+    return service(`/user/detail?uid=${userId}`,{})
+}

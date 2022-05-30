@@ -1,5 +1,5 @@
 const app = getApp<IAppOption>();
-import { getCaptcha,verifyCaptcha,logina} from "../../api/user";
+import { getCaptcha, verifyCaptcha, logina } from "../../api/user";
 Page({
   data: {
     phone: "",
@@ -35,20 +35,24 @@ Page({
       });
     }
   },
-    //登录
- login:function(){
-  //验证验证码
-  verifyCaptcha(this.data.phone,this.data.captcha)
-  .then((res:any)=>{
-    if(res.code==200&&res.data){
-      logina(this.data.phone,this.data.captcha).then((res)=>{
-        if(res.code==200){}
+  //登录
+  login: function () {
+    //验证验证码
+    verifyCaptcha(this.data.phone, this.data.captcha)
+      .then((res: any) => {
+        if (res.code == 200 && res.data) {
+          logina(this.data.phone, this.data.captcha).then((res: any) => {
+            if (res.code == 200) {
+              // wx.setStorageSync('userInfo', JSON.stringify(res.profile));
+              wx.setStorageSync('userId', res.account.id)
+              wx.reLaunch({ url: '/pages/my/my' })
+            }
+          })
+        }
       })
-    }
-  })
 
 
-},
+  },
   //获取验证码
   getChpcthaNum: function () {
     console.log(this.data.phone, 16666);

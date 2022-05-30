@@ -1,9 +1,10 @@
 {
   "pages": [
+    "pages/my/my",
     "pages/login/login",
     "pages/index/index",
-    "pages/video/video",
-    "pages/my/my"
+    "pages/video/video"
+   
     
   ],
   "window": {
@@ -33,7 +34,7 @@
       },
       {
         "pagePath": "pages/my/my",
-        "text": "个人",
+        "text": "我的",
         "iconPath": "./images/tabs/tab-personal.png",
         "selectedIconPath": "./images/tabs/tab-personal-current.png"
       }

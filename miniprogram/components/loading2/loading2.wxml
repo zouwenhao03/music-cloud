@@ -1,0 +1,10 @@
+<!--components/rwj-loading/index.wxml-->
+<view class="loading-container"  catchtouchmove="true" hidden="{{!loadingState}}">
+  <view class="loading-main">
+    <view class="loading-content">
+      <view class="loading-image">
+        <image src="../../images/charge/loading.png"></image>
+      </view>
+    </view>
+  </view>
+</view>
