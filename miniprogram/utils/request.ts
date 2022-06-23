@@ -25,7 +25,7 @@ export default function service(url: string, data:data, method: any='GET') {
                         resolve(res.data)
                     }else{
                         wx.showToast({
-                            title:res.data.message,
+                            title:res.data.msg,
                             icon:'none'
                         })
                     }

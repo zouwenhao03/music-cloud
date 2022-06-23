@@ -26,13 +26,14 @@
   // swiper
   .swiper-container {
     width: 100%;
-    height: 400rpx;
+    height: 310rpx;
     .swiper {
       height: 100%;
       .item {
-        height: 400rpx;
+        height: 310rpx;
         image {
           width: 100%;
+          height: 300rpx;
         }
       }
     }
@@ -55,6 +56,7 @@
         background-color: #d43c33;
         color: #eee;
         font-size: 42rpx;
+        margin-bottom: 10rpx;
       }
       .item-word {
         text-align: center;
