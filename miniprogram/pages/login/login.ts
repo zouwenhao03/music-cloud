@@ -1,13 +1,28 @@
 const app = getApp<IAppOption>();
-import { getCaptcha, verifyCaptcha, logina } from "../../api/user";
+import { getCaptcha, verifyCaptcha, logina,loginP } from "../../api/user";
 Page({
   data: {
     phone: "",
     captcha: "",
+    pwd:'',
     captchaDisable: false,
     captchamsg: "获取验证码",
     timer: null,
+    loginType: '点击切换密码登录'
   },
+  //切换登录方式
+  changeLogin() {
+    if (this.data.loginType == '点击切换密码登录') {
+      this.setData({
+        loginType: '点击切换验证码登录'
+      })
+    } else {
+      this.setData({
+        loginType: '点击切换密码登录'
+      })
+    }
+  },
+
   //表单项内容发生改变
   handleInput(event: any) {
     let type = event.currentTarget.id;
@@ -37,24 +52,62 @@ Page({
   },
   //登录
   login: function () {
-    //验证验证码
-    verifyCaptcha(this.data.phone, this.data.captcha)
-      .then((res: any) => {
-        if (res.code == 200 && res.data) {
-          logina(this.data.phone, this.data.captcha).then((res: any) => {
-            if (res.code == 200) {
-              // wx.setStorageSync('userInfo', JSON.stringify(res.profile));
-              wx.setStorageSync('userId', res.account.id)
-              wx.reLaunch({ url: '/pages/my/my' })
-            }
+    if (this.data.loginType == '点击切换密码登录') {
+      //验证验证码
+      verifyCaptcha(this.data.phone, this.data.captcha)
+        .then((res: any) => {
+          if (res.code == 200 && res.data) {
+            logina(this.data.phone, this.data.captcha).then((res: any) => {
+              if (res.code == 200) {
+                // wx.setStorageSync('userInfo', JSON.stringify(res.profile));
+                wx.setStorageSync('userId', res.account.id)
+                wx.reLaunch({ url: '/pages/my/my' })
+              }
+            })
+          }else{
+            wx.showToast({
+              title:res.msg,
+              icon:'none'
+            })
+          }
+        })
+        .catch((err)=>{
+          wx.showToast({
+            title:err,
+            icon:'none'
           })
-        }
-      })
-
-
+        })
+    }else if(this.data.loginType == '点击切换验证码登录'){
+      if(this.data.phone&&this.data.pwd){
+        loginP(this.data.phone,this.data.pwd)
+        .then((res:any)=>{
+          if(res.code==200){
+            wx.setStorageSync('userId', res.account.id)
+            wx.reLaunch({ url: '/pages/my/my' })
+            app.globalData.hasLogin = true
+          }else{
+            wx.showToast({
+              title:res.msg,
+              icon:'none'
+            })
+          }
+        })
+        .catch((err)=>{
+          wx.showToast({
+            title:err,
+            icon:'none'
+          })
+        })
+      }else{
+        wx.showToast({
+          title:'请输入完整信息',
+          icon:'none'
+        })
+      }
+    }
   },
   //获取验证码
-  getChpcthaNum: function () {
+  getChpcthaNum: function (): any {
     console.log(this.data.phone, 16666);
     if (!/^1[0-9]{10}$/.test(this.data.phone)) {
       wx.showToast({

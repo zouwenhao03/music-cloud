@@ -49,4 +49,8 @@ Page({
         });
       });
   },
+  //每日推荐
+  goRecom(){
+    wx.navigateTo({url:'/pages/recomPlay/recomPlay'})
+  }
 });

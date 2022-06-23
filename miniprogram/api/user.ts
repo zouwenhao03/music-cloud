@@ -10,7 +10,11 @@ export function verifyCaptcha(phone:string,captcha:string){
 }
 //验证码登录
 export function logina(phone:string,captcha:string){
-    return service(`/login/cellphone?phone=${phone}&captcha=${captcha}`,{})
+    return service(`/login/cellphone?phone=${phone}&captcha=${captcha}`,{isLogin:true})
+}
+//密码登录
+export function loginP(phone:string,pwd:string){
+    return service(`/login/cellphone?phone=${phone}&password=${pwd}`,{isLogin:true})
 }
 //获取用户信息
 export function getUserInfo(userId:string){

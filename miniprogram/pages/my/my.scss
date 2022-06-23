@@ -1,83 +1,176 @@
 .my-part {
   width: 100%;
-  background-color: #d7dbdf;
+  height: 100vh;
+  background-color: #F7F7F7;
   position: relative;
-  .my-background {
-    image {
-      width: 100%;
-      height: 500rpx;
+  .isLogin{
+    .my-background {
+      image {
+        width: 100%;
+        height: 500rpx;
+      }
+    }
+    .my-detail {
+      width: 88%;
+      height: 400rpx;
+      border: 1rpx solid rgba(255,255,255,0.5);
+      margin: 0 auto;
+     // position: absolute;
+     //top: 550rpx;
+      //left: 50%;
+      //transform: translate(-50%, -50%);
+      margin-top: -130rpx;
+      position: relative;
+      z-index: 101;
+      background-color: #ffffff;
+      border-radius: 40rpx;
+      .detail-container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        .my-avatar {
+          width: 150rpx;
+          height: 150rpx;
+          position: absolute;
+          top: -20rpx;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 100;
+          image {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+          }
+        }
+        .my-txt {
+          text-align: center;
+          padding-top: 80rpx;
+          display: flex;
+          flex-direction: column;
+          .nickName{
+              font-size: 42rpx;
+              font-weight: bold;
+          }
+          .follow-part{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            .follow-num{
+              display: flex;
+              font-size: 32rpx;
+              color:#6F6F6F ;
+            }.follow-txt{
+              color: black;
+              padding-left: 10rpx;
+              padding-right: 20rpx;
+            }
+          }
+          .signature{
+              font-size: 30rpx;
+              text-align: left;
+              padding: 15rpx;
+              padding-bottom: 0;
+              padding-top: 10;
+              display: flex;
+              .title{
+                  font-size: 28rpx;
+                  color: #6F6F6F;
+                  margin-right: 10rpx;
+              }
+              .title1{
+                  width: 100rpx;
+              }
+          }
+        }
+      }
     }
   }
-  .my-detail {
-    width: 88%;
-    height: 400rpx;
-    border: 1px solid #ffffff;
-    border: 1px solid black;
-    margin: 0 auto;
-    position: absolute;
-    top: 550rpx;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #ffffff;
-    border-radius: 40rpx;
-    .detail-container {
+ 
+  .no-login{
+    width: 100%;
+    .empty{
       width: 100%;
-      height: 100%;
+      height: 200rpx;
+    }
+    .to-login{
+      width: 88%;
+      height: 200rpx;
+      border: 1rpx solid rgba(255,255,255,0.5);
+      margin: 0 auto;
+      border-radius: 20rpx;
+      background-color: #ffffff;
       position: relative;
-      .my-avatar {
+      font-size: 48rpx;
+      font-weight: bold;
+      text-align: center;
+      line-height: 200rpx;
+      .no-avatar{
         width: 150rpx;
         height: 150rpx;
+        border-radius: 50%;
+        border: 1rpx solid rgba(26,26,26,0.5);
         position: absolute;
         top: -20rpx;
         left: 50%;
         transform: translate(-50%, -50%);
-        z-index: 100;
-        image {
-          width: 100%;
-          height: 100%;
-          border-radius: 50%;
-        }
       }
-      .my-txt {
-        text-align: center;
-        padding-top: 80rpx;
-        display: flex;
-        flex-direction: column;
-        .nickName{
-            font-size: 42rpx;
-            font-weight: bold;
-        }
-        .follow-part{
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          .follow-num{
-            display: flex;
-            font-size: 32rpx;
-            color:#6F6F6F ;
-          }.follow-txt{
-            color: black;
-            padding-left: 10rpx;
-            padding-right: 20rpx;
-          }
-        }
-        .signature{
-            font-size: 30rpx;
-            text-align: left;
-            padding: 15rpx;
-            padding-bottom: 0;
-            padding-top: 10;
-            display: flex;
-            .title{
-                font-size: 28rpx;
-                color: #6F6F6F;
-                margin-right: 10rpx;
-            }
-            .title1{
-                width: 100rpx;
-            }
-        }
+    }
+  }
+  .my-like{
+    width: 84%;
+    height: 100rpx;
+    border-radius: 20rpx;
+    background-color: #ffffff;
+    border: 1rpx solid rgba(255,255,255,0.5);
+    margin: 0 auto;
+    margin-top: 50rpx;
+    padding: 20rpx;
+    display: flex;
+    align-items: center;
+    .like-img{
+      width: 80rpx;
+      height: 80rpx;
+      border: 1rpx solid rgba(26,26,26,0.5);
+      border-radius: 10rpx;
+      background-color: #888888;
+      text-align: center;
+      margin-right: 30rpx;
+      image{
+        width: 50rpx;
+        height: 50rpx;
+        padding-top: 18rpx;
       }
+    }
+    .like-txt{
+      display: flex;
+      flex-direction: column;
+    }
+    .last{
+      width: 150rpx;
+      text-align: center;
+      border: 1rpx solid #eee;
+      border-radius: 20rpx;
+      margin-left: 170rpx;
+      padding: 10rpx;
+    }
+  }
+  .my-list{
+    width: 84%;
+    padding: 20rpx;
+    background-color: #ffffff;
+    border: 1rpx solid rgba(255,255,255,0.5);
+    border-radius: 20rpx; 
+    margin: 0 auto;  
+    margin-top: 50rpx;
+    
+    .list-1{
+      width: 100%;
+      height: 80rpx;
+      border-bottom:1rpx solid #eee ;
+      line-height: 80rpx;
+    }
+    .last{
+      border-bottom: 0;
     }
   }
 }

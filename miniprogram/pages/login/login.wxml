@@ -7,12 +7,19 @@
             <text class="txt">手机号</text>
             <input placeholder="手机号码" placeholder-class="input-pl" auto-focus data-type="phone" id="phone" bindinput="handleInput" />
         </view>
-        <view class="user-phone">
+        <view class="user-phone" wx:if="{{loginType == '点击切换密码登录'}}">
             <text class="txt">验证码</text>
             <input placeholder="验证码" type="password" placeholder-class="input-pl" data-type='captcha' id="captcha" bindinput="handleInput" />
-            <button class="chatcha-btn" bindtap="getChpcthaNum" 	disabled="{{captchaDisable}}">{{ captchamsg}}</button>
-      </view>
+            <button class="chatcha-btn" bindtap="getChpcthaNum" disabled="{{captchaDisable}}">
+                {{ captchamsg}}
+            </button>
+        </view>
+        <view class="user-phone" wx:if="{{loginType == '点击切换验证码登录'}}">
+            <text class="txt" decode="{{true}}">密码 &nbsp;</text>
+            <input placeholder="密码" type="password" placeholder-class="input-pl"  data-type="pwd" id="pwd" bindinput="handleInput" />
+        </view>
         <button bindtap="login" class="login-button">登录</button>
+        <view class="login-type" bindtap="changeLogin">{{loginType}}</view>
     </view>
     <view class="footer" hover-class="none" hover-stop-propagation="false">
         <view class="first">云音乐·音乐的力量</view>

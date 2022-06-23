@@ -29,5 +29,8 @@ Page({
             })
            }
         }
+    },
+    gologin(){
+        wx.navigateTo({url:'/pages/login/login'})
     }
 })

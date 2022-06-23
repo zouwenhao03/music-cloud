@@ -20,7 +20,7 @@
   </view>
   <!-- nav -->
   <view class="nav-part" hover-class="none" hover-stop-propagation="false">
-    <view class="nav-item">
+    <view class="nav-item" bindtap='goRecom'>
       <text class="iconfont icon-tuijianfenxiang"></text>
       <text class="item-word">每日推荐</text>
     </view>
