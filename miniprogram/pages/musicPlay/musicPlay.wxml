@@ -1,9 +1,7 @@
 <!--pages/songDetail/songDetail.wxml-->
 <view class="songDetailContainer">
-
   <view class="musicAuthor">{{song.ar[0].name}}</view>
   <view class="circle"></view>
-  
   <!-- 摇杆 -->
   <image class="needle {{isPlay && 'needleRotate'}}" src="../../images/song/needle.png"></image>
   <!-- 磁盘 -->

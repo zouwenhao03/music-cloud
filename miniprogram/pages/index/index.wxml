@@ -21,7 +21,7 @@
   <!-- nav -->
   <view class="nav-part" hover-class="none" hover-stop-propagation="false">
     <view class="nav-item" bindtap='goRecom'>
-      <text class="iconfont icon-tuijianfenxiang"></text>
+      <text class="iconfont icon-tuijian"></text>
       <text class="item-word">每日推荐</text>
     </view>
     <view class="nav-item">

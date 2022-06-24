@@ -3,7 +3,9 @@
 interface IAppOption {
   globalData: {
     userInfo?: WechatMiniprogram.UserInfo,
-    hasLogin:boolean
+    hasLogin:boolean,
+    musicId:string,
+    isMusicPlay:boolean
   }
   userInfoReadyCallback?: WechatMiniprogram.GetUserInfoSuccessCallback,
 }

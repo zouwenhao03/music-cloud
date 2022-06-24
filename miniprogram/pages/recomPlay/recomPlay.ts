@@ -18,12 +18,16 @@ Page({
         this.setData({year:date.getFullYear(),month:date.getMonth()+1})
         this.setData({day:date.getDate()})
     },
+    //去播放界面
+    toSongDetail(e:any){
+        let id = e.currentTarget.dataset.song.id
+        wx.navigateTo({url:`/pages/musicPlay/musicPlay?id=${id}`})
+    },
     //获取歌曲列表
     getDayRecom() {
         if (app.globalData.hasLogin) {
             getSongList()
                 .then((res: any) => {
-                    console.log(res,18)
                     if (res.code == 200) {
                         this.setData({ recommendList: res.data.dailySongs })
                     }else{
