@@ -32,7 +32,7 @@
   <view class="musicControl">
     <text class="iconfont icon-random"></text>
     <text class="iconfont icon-diyigeshipin" id="pre" bindtap="handleSwitch"></text>
-    <text class="iconfont {{isPlay ? 'icon-zanting' : 'icon-kaishi'}} big" bindtap="handleMusicPlay"></text>
+    <text class="iconfont {{isPlay ? 'icon-zanting' : 'icon-kaishi'}} big" bindtap="handlePlayState"></text>
     <text class="iconfont icon-zuihouyigeshipin" id="next" bindtap="handleSwitch"></text>
     <text class="iconfont icon-liebiao"></text>
   </view>

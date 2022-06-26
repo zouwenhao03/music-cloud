@@ -1,16 +1,36 @@
 import { getSongList } from '../../api/songList'
+import pubsub from 'pubsub-js'
 const app = getApp<IAppOption>();
 Page({
     data: {
         recommendList: [],
         year: 0,
         month: 0,
-        day: 0
+        day: 0,
+        index:0,//音乐列表数组的下标
     },
     onLoad() {
         console.log(app.globalData.hasLogin, 1111)
         this.getTime()
-        this.getDayRecom()
+        this.getDayRecom();
+        //订阅来自播放页面的消息
+        pubsub.subscribe('switchMusic',(msg:string,type:string)=>{
+            let recommendList = this.data.recommendList;
+            let index = this.data.index;
+            if(type=='pre'){
+                index -= 1;
+            }else{
+                //下一首
+                index += 1
+            }
+            //更新下标
+            this.setData({
+                index
+            });
+            let songId = recommendList[index].id;
+            //将音乐id回传给播放页
+            pubsub.publish('songId',songId)
+        })
     },
     //更新时间
     getTime(){
@@ -21,6 +41,10 @@ Page({
     //去播放界面
     toSongDetail(e:any){
         let id = e.currentTarget.dataset.song.id
+        let index = e.currentTarget.dataset.index
+        this.setData({
+            index
+        })
         wx.navigateTo({url:`/pages/musicPlay/musicPlay?id=${id}`})
     },
     //获取歌曲列表

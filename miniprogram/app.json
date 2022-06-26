@@ -1,13 +1,15 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/recomPlay/recomPlay",
+    "pages/index/index",
+ 
     "pages/test/test",
     "pages/musicPlay/musicPlay",
     "pages/my/my",
     "pages/login/login",
     "pages/video/video"
   ],
+  "requiredBackgroundModes": ["audio", "location"],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#C62F2F",
@@ -40,5 +42,6 @@
         "selectedIconPath": "./images/tabs/tab-personal-current.png"
       }
     ]
+    
   }
 }
