@@ -59,11 +59,20 @@ Page({
       console.log('end')
       //切换下一首
       pubsub.publish('switchMusic','next');
+       //订阅来自上个页面传来的id
+    pubsub.subscribe('songId',(msg:string,songId:string)=>{
+      //获取歌曲信息
+      this.getSongInfo(songId);
+      //自动播放
+      this.musicControl(true,songId);
+      pubsub.unsubscribe('songId')
+    });
       //进度条为0，开始时间为0
       this.setData({
         currentTime:'00:00',
         currentWidth:0
-      })
+      });
+      
     })
   },
 //切换音乐
@@ -81,7 +90,6 @@ handleSwitch(event:any){
     });
     //发布消息,将切换类型告知上个页面
     pubsub.publish('switchMusic',type)
-
 },
 
 

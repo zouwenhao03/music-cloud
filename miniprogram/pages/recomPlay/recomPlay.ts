@@ -15,6 +15,7 @@ Page({
         this.getDayRecom();
         //订阅来自播放页面的消息
         pubsub.subscribe('switchMusic',(msg:string,type:string)=>{
+            console.log(msg,type,1888888)
             let recommendList = this.data.recommendList;
             let index = this.data.index;
             if(type=='pre'){
@@ -22,12 +23,14 @@ Page({
             }else{
                 //下一首
                 index += 1
+                console.log(index,'index')
             }
             //更新下标
             this.setData({
                 index
             });
             let songId = recommendList[index].id;
+            console.log(songId,'songId')
             //将音乐id回传给播放页
             pubsub.publish('songId',songId)
         })
