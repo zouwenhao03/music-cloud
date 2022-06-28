@@ -7,7 +7,10 @@ export function getBanner() {
 export function getRecommend() {
     return service('/personalized?limit=10',{})
 }
-
+//获取推荐列表页歌单
+export function getRecommendSongs(id:string){
+    return service(`/playlist/detail/?id=${id}`,{})
+}
 //排行榜
 export function getTopList() {
     return service('/toplist/detail',{})

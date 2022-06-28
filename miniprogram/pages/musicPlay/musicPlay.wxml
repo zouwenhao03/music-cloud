@@ -1,5 +1,9 @@
 <!--pages/songDetail/songDetail.wxml-->
-<view class="songDetailContainer">
+<view class="lyric-page" bindtap="showLyric" wx:if="{{hiddenLyric == false}}">
+  <text wx:if="{{lyric == null}}" > 纯音乐，暂无歌词</text>
+  <view  class="lyric" wx:for="{{lyric}}">{{item.text}}</view>
+</view>
+<view class="songDetailContainer"  wx:if="{{hiddenLyric == true}}">
   <view class="musicAuthor">{{song.ar[0].name}}</view>
   <view class="circle"></view>
   <!-- 摇杆 -->
@@ -8,7 +12,7 @@
   <view class="discContainer {{isPlay && 'discAnimation'}}">
     <image class="disc" src="../../images/song/disc.png"></image>
     <!-- 歌曲封面图 -->
-    <image class="musicImg" src="{{song.al.picUrl}}"></image>
+    <image class="musicImg" src="{{song.al.picUrl}}" bindtap="showLyric"></image>
   </view>
   <!-- 歌词 -->
   <view class="scrollLrc">

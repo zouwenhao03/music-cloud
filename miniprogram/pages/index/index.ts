@@ -15,7 +15,7 @@ Page({
     this.getRecommendList();
     getTopList().then((res:any)=>{
       this.setData({topList:res.list})
-      console.log(this.data.topList)
+     // console.log(this.data.topList)
     })
   },
 
@@ -38,6 +38,7 @@ Page({
   getRecommendList: function () {
     getRecommend()
       .then((res: any) => {
+        console.log(res,41)
         if (res.code == 200) {
           this.setData({ recommendList: res.result });
         }
@@ -49,8 +50,13 @@ Page({
         });
       });
   },
-  //每日推荐
+  //每日推荐(需要登录)
   goRecom(){
     wx.navigateTo({url:'/pages/recomPlay/recomPlay'})
+  },
+  //跳转推荐歌单的歌单列表页
+  goPlayList(e:any){
+    let listId = e.currentTarget.dataset.listid
+    wx.navigateTo({url:`/pages/playList/playList?listId=${listId}`})
   }
 });

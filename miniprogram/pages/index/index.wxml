@@ -45,7 +45,7 @@
   <view class="suggest-part">
     <navHeader title="推荐歌曲" item="为你精心的推荐"></navHeader>
     <scroll-view class="suggest-scroll" enable-flex="true" scroll-x="true">
-      <view class="scroll-item" wx:for="{{recommendList}}" wx:key="id">
+      <view class="scroll-item" wx:for="{{recommendList}}" wx:key="id" bindtap="goPlayList" data-listid="{{item.id}}">
         <image class="item-img" src="{{item.picUrl}}"></image>
         <text class="item-text">{{item.name}}</text>
       </view>
