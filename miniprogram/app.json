@@ -1,8 +1,8 @@
 {
   "pages": [
-
     "pages/index/index",
     "pages/playList/playList",
+    
     "pages/recomPlay/recomPlay",
     "pages/test/test",
     "pages/musicPlay/musicPlay",

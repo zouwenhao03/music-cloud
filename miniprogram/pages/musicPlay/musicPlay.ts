@@ -22,12 +22,19 @@ Page({
   },
   onLoad: function (op) {
     //console.log(this, 20)
+    console.log(app.globalData.musicId,'musicID')
     if (op.id) {
+      console.log(op.id,'songgID')
+      
       this.setData({ songId: op.id });
       this.getSongInfo(this.data.songId);
       //this.playMusic(this.data.songId);
       this.getSongLyri(this.data.songId);
       //判断单签页面是否有音乐播放
+       this.musicControl(true,this.data.songId)
+       this.setData({
+        currentTime:'00:00'
+       })
     }
     if (
       app.globalData.isMusicPlay &&
@@ -37,7 +44,18 @@ Page({
       this.setData({
         isPlay: true,
       });
+    }else{
+      this.setData({
+        isPlay:false
+      })
     }
+   
+
+    
+    this.setData({
+      currentTime:'00:00'
+    })
+    console.log('onload',45)
     backgroundAudioManager.onPlay(() => {
       this.changePlayState(true);
       app.globalData.musicId = this.data.songId;

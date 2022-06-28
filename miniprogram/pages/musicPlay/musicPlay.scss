@@ -2,10 +2,11 @@
 .songDetailContainer {
     //height: 100%;
     height: 100vh;
-    background: rgba(0,0,0,0.5);
+   // background: rgba(0,0,0,0.5);
     display: flex;
     flex-flow: column;
     align-items: center;
+    position: relative;
   }
   /* 底座 */
   .circle {
@@ -142,4 +143,14 @@
     padding: 8rpx;
     color: #EEEEEE;
   }
-  
+  .background_img{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(20px);
+    z-index: -1;
+    transform: scale(1.5); /*和网易云音乐对比了一下，发现也是放大1.5倍*/
+  }

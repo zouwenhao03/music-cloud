@@ -1,3 +1,50 @@
 .playList-page{
-    
+   .heade-part{
+    width: 100%;
+   // border-bottom: 1rpx solid rgba(0,0,0,0.5);
+    //padding: 20rpx;
+
+    .bac-img{
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+       // height: 100%;
+        filter: blur(20px);
+        z-index: -1;
+        transform: scale(1.5); /*和网易云音乐对比了一下，发现也是放大1.5倍*/
+    }
+    .heade-container{
+        width: 90%;
+        height: 260rpx;
+        border: 1rpx solid black;
+        margin: 0 auto;
+        padding: 20rpx;
+        display: flex;
+        align-items: center;
+        image{
+            width: 200rpx;
+            height:200rpx ;
+            border-radius: 20rpx;
+            border: 1rpx solid rgba(0,0,0,0.5) ;
+            margin-right: 50rpx;
+        }
+        .right-part{
+            display: flex;
+            flex-direction: column;
+            image{
+                width: 60rpx;
+                height: 60rpx;
+                border-radius: 50%;
+            }
+            .list-desc{
+                width: 100%;
+                height: 50rpx;
+                font-size: 28rpx;
+                overflow: hidden;
+            }
+        }
+    }
+   } 
 }
