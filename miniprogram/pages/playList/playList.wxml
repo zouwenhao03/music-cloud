@@ -1,0 +1,14 @@
+<view class="playList-page">
+   <!-- headimg -->
+    <view class="heade-part">
+        <image  />
+        <view class="right-part">
+            <text class="title"></text>
+            <view class="author">
+                <image src=""  />
+                <text >name</text>
+            </view>
+            <view class="list-desc"></view>
+        </view>
+    </view>
+</view>
