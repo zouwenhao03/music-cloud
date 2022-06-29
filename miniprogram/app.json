@@ -2,13 +2,14 @@
   "pages": [
     "pages/index/index",
     "pages/playList/playList",
-    
+    "pages/search/search",
     "pages/recomPlay/recomPlay",
     "pages/test/test",
     "pages/musicPlay/musicPlay",
     "pages/my/my",
     "pages/login/login",
-    "pages/video/video"
+    "pages/video/video",
+    "pages/play/play"
   ],
   "requiredBackgroundModes": ["audio", "location"],
   "window": {

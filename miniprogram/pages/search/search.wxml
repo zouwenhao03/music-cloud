@@ -1,0 +1,5 @@
+<view class="search-page" >
+   <view class="serarch-head" >
+    <input type="text" />
+   </view>
+</view>

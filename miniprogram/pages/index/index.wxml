@@ -1,7 +1,7 @@
 <!-- index.wxml -->
 <view class="index-container">
   <!-- search -->
-  <view class="search-part">
+  <view class="search-part" bindtap="goSearchPage">
     <image class="logo-img" src="../../images/video/video.jpg" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
     <view class="search-input">搜索歌曲</view>
     <image class="logo-img" src="../../images/logo.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>

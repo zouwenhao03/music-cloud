@@ -1,8 +1,23 @@
 <!--pages/songDetail/songDetail.wxml-->
 <view class="lyric-page" bindtap="showLyric" wx:if="{{hiddenLyric == false}}">
    <image src="{{song.al.picUrl}}" class="background_img" ></image>
-  <text wx:if="{{lyric == null}}" > 纯音乐，暂无歌词</text>
-  <view  class="lyric" wx:for="{{lyric}}">{{item.text}}</view>
+  <!-- <text wx:if="{{lyric == null}}" > 纯音乐，暂无歌词</text>
+  <view  class="lyric" wx:for="{{lyric}}">{{item.text}}</view> -->
+  <scroll-view
+		 scroll-y="true"
+		 scroll-with-animation='true'
+		 scroll-top='{{marginTop}}'
+		 class="body-scroll"
+		>
+			<view class='contentText'>
+				<view class="contentText-noLyric" wx:if="{{lyric == null}}">纯音乐，无歌词 </view>
+				<block wx:for='{{lyric}}' wx:key="index">
+					<view class="lyric">
+						<view class="lyric-text {{currentIndex == index ? 'currentTime' : ''}}">{{item.text}}</view>
+					</view>
+				</block>
+			</view>
+		</scroll-view>
 </view>
 <view class="songDetailContainer"  wx:if="{{hiddenLyric == true}}" >
   <image src="{{song.al.picUrl}}" class="background_img" ></image>

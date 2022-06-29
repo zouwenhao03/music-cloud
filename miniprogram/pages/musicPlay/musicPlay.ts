@@ -19,6 +19,8 @@ Page({
     lyricTime: 0,//歌词对应的时间
     currentLyric: '',//当前的歌词
     ly: '',//歌词
+    currentIndex: 0,    //当前正在第几行
+    marginTop: 0,    //文稿滚动距离
   },
   onLoad: function (op) {
     //取消监听上个页面的songid
@@ -68,6 +70,7 @@ Page({
     //音乐播放实时监听
     backgroundAudioManager.onTimeUpdate(() => {
       this.musicPlayTime()
+      this.lyricsRolling()
     });
     //监听音乐自动播放结束，自动切换下一曲
     backgroundAudioManager.onEnded(() => {
@@ -250,6 +253,37 @@ Page({
       lyricTime, currentTime, currentWidth
     })
     this.getCurrentLyric();
-  }
+  },
+    // 歌词滚动方法
+    lyricsRolling() {
+      const that = this
+      // 歌词滚动
+      that.setData({
+        marginTop: (that.data.currentIndex - 3) * 39
+      })
+      // 当前歌词对应行颜色改变
+      if (that.data.currentIndex != that.data.lyric.length - 1) {//不是最后一行
+        // var j = 0;
+        for (let j = that.data.currentIndex; j < that.data.lyric.length; j++) {
+          // 当前时间与前一行，后一行时间作比较， j:代表当前行数
+          if (that.data.currentIndex == that.data.lyric.length - 2) {  //倒数第二行
+            //最后一行只能与前一行时间比较
+            if (parseFloat(backgroundAudioManager.currentTime) > parseFloat(that.data.lyric[that.data.lyric.length - 1][0])) {
+              that.setData({
+                currentIndex: that.data.lyric.length - 1
+              })
+              return;
+            }
+          } else {
+            if (parseFloat(backgroundAudioManager.currentTime) > parseFloat(that.data.lyric[j][0]) && parseFloat(backgroundAudioManager.currentTime) < parseFloat(that.data.lyric[j + 1][0])) {
+              that.setData({
+                currentIndex: j
+              })
+              return;
+            }
+          }
+        }
+      }
+    },
 
 });

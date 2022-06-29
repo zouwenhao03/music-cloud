@@ -18,7 +18,10 @@ Page({
      // console.log(this.data.topList)
     })
   },
-
+//跳转搜索页面
+goSearchPage(){
+  wx.navigateTo({url:'/pages/search/search'})
+},
   //获取swiper
   getBannerList: function () {
     getBanner()
