@@ -16,25 +16,27 @@ Page({
     lyric: [],
     musicLink: '',//歌曲链接
     currentWidth: 0,//进度条实时宽度
-    lyricTime:0,//歌词对应的时间
-    currentLyric:'',//当前的歌词
-    ly:'',//歌词
+    lyricTime: 0,//歌词对应的时间
+    currentLyric: '',//当前的歌词
+    ly: '',//歌词
   },
   onLoad: function (op) {
+    //取消监听上个页面的songid
+    //pubsub.unsubscribe(sub)
     //console.log(this, 20)
-    console.log(app.globalData.musicId,'musicID')
+    console.log(app.globalData.musicId, 'musicID')
     if (op.id) {
-      console.log(op.id,'songgID')
-      
+      console.log(op.id, 'songgID')
+
       this.setData({ songId: op.id });
       this.getSongInfo(this.data.songId);
       //this.playMusic(this.data.songId);
       this.getSongLyri(this.data.songId);
       //判断单签页面是否有音乐播放
-       this.musicControl(true,this.data.songId)
-       this.setData({
-        currentTime:'00:00'
-       })
+      this.musicControl(true, this.data.songId)
+      this.setData({
+        currentTime: '00:00'
+      })
     }
     if (
       app.globalData.isMusicPlay &&
@@ -44,18 +46,15 @@ Page({
       this.setData({
         isPlay: true,
       });
-    }else{
+    } else {
       this.setData({
-        isPlay:false
+        isPlay: false
       })
     }
-   
-
-    
     this.setData({
-      currentTime:'00:00'
+      currentTime: '00:00'
     })
-    console.log('onload',45)
+    console.log('onload', 45)
     backgroundAudioManager.onPlay(() => {
       this.changePlayState(true);
       app.globalData.musicId = this.data.songId;
@@ -68,7 +67,7 @@ Page({
     });
     //音乐播放实时监听
     backgroundAudioManager.onTimeUpdate(() => {
-     this.musicPlayTime()
+      this.musicPlayTime()
     });
     //监听音乐自动播放结束，自动切换下一曲
     backgroundAudioManager.onEnded(() => {
@@ -76,7 +75,7 @@ Page({
       //切换下一首
       pubsub.publish('switchMusic', 'next');
       //订阅来自上个页面传来的id
-      pubsub.subscribe('songId', (msg: string, songId: string) => {
+     pubsub.subscribe('songId', (msg: string, songId: string) => {
         //获取歌曲信息
         this.getSongInfo(songId);
         //自动播放
@@ -102,8 +101,15 @@ Page({
     let type = event.currentTarget.id;
     //需要关闭单前页面的歌曲
     backgroundAudioManager.stop();
+    pubsub.subscribe('listId',(msg:string,listId:string)=>{
+      console.log(listId,103)
+      pubsub.unsubscribe('listId')
+    })
+
     //订阅来自上个页面传来的id
-    pubsub.subscribe('songId', (msg: string, songId: string) => {
+    pubsub.subscribe(`songId`, (msg: string, songId: string) => {
+      console.log(msg,104)
+      console.log(songId, 10444)
       //获取歌曲信息
       this.getSongInfo(songId);
       //自动播放
@@ -160,6 +166,12 @@ Page({
       backgroundAudioManager.pause();
     }
   },
+  //
+  onUnload: function () {
+    console.log('Unload')
+    pubsub.unsubscribe('songId')
+  },
+
   //控制音频播放
   handleMusicPlay() { },
   //获取歌曲详情
@@ -188,7 +200,7 @@ Page({
     let lyricData: any = await getSongLyric(id);
     //this.setData({ lyric: lyric.lrc.lyric });
     let lyric = this.formatLyric(lyricData.lrc.lyric)
-    
+
   },
   //格式化歌词
   formatLyric(text: any) {
@@ -210,34 +222,34 @@ Page({
     }
     result.sort(this.sortRule)
     this.setData({
-      lyric:result,
+      lyric: result,
     })
-    console.log(this.data.lyric,'201lyric')
+    console.log(this.data.lyric, '201lyric')
   },
   sortRule(a: any, b: any) { //设置一下排序规则
     return a.time - b.time;
   },
   //控制歌词播放
-  getCurrentLyric(){
+  getCurrentLyric() {
     let j;
-    for(j=0; j<this.data.lyric.length-1; j++){
-      if(this.data.lyricTime == this.data.lyric[j].time){
+    for (j = 0; j < this.data.lyric.length - 1; j++) {
+      if (this.data.lyricTime == this.data.lyric[j].time) {
         this.setData({
-          currentLyric : this.data.lyric[j].text
+          currentLyric: this.data.lyric[j].text
         })
       }
     }
   },
   //观察音乐播放进度
-  musicPlayTime(){
+  musicPlayTime() {
     //获取歌词对应的时间
-    let lyricTime = Math.ceil(backgroundAudioManager.currentTime); 
+    let lyricTime = Math.ceil(backgroundAudioManager.currentTime);
     let currentTime = moment(backgroundAudioManager.currentTime * 1000).format('mm:ss');
-    let currentWidth = (backgroundAudioManager.currentTime/backgroundAudioManager.duration) * 450;
+    let currentWidth = (backgroundAudioManager.currentTime / backgroundAudioManager.duration) * 450;
     this.setData({
-      lyricTime,currentTime,currentWidth
+      lyricTime, currentTime, currentWidth
     })
     this.getCurrentLyric();
   }
-  
+
 });

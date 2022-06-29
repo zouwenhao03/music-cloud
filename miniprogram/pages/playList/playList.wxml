@@ -1,56 +1,36 @@
 <view class="playList-page">
     <!-- headimg -->
     <view class="heade-part">
-        <image class="bac-img" src="https://p1.music.126.net/j6XyUQN4HA8jsSi2kDUMJA==/18613632348753655.jpg" />
+        <image class="bac-img" src="{{songsList.coverImgUrl}}" />
         <view class="heade-container">
-            <image src="https://p1.music.126.net/j6XyUQN4HA8jsSi2kDUMJA==/18613632348753655.jpg" alt="" />
+            <view>
+                <image src="{{songsList.coverImgUrl}}" alt="" />
+            </view>
             <view class="right-part">
-                <text class="title">「后摇电影原声·采样」</text>
+                <text class="title">{{songsList.name}}</text>
                 <view class="author">
-                    <image src="http://p1.music.126.net/q80YhtM8Yn3bEgugE3T-Cg==/109951163721382420.jpg" />
-                    <text>name</text>
+                    <image src="{{songsList.creator.avatarUrl}}" />
+                    <text>{{songsList.creator.nickname}}</text>
                 </view>
-                <view class="list-desc"> "【当电影遇上后摇】
-封面：动画师森本晃司为日本后摇团MONO 制作的一段音乐短片截图
-排序：按照电影发行时间
-1&2、The Great Dictator(1940)
-3、各位 我是撒旦(1960)
-4、杀死一只知更鸟(1962)
-5、2001太空漫游(1968)
-6、无语问苍天(1971)
-7&8、Network(1976)
-9、安妮·霍尔(1977)
-10、21克(2003)
-11、The Verdict(1982)
-12、街头浪子(1984)
-13、席德与南茜(1986)
-14、Dead Poets Society(1989)
-15、体热边缘(1993)
-16、The Prophecy(1995)
-17、EVA(1995)
-18&19、江湖白事(1996)
-20、The Thin Red Line(1998)
-21、机器管家(1999)
-22、木兰花(1999)
-23、荒岛余生(2000)
-24、我是山姆(2001)
-25、天才一族(2001)
-26、诱惑法则(2002)
-27、惊变28天(2002)
-28、第25小时(2002)
-29&30&31、爱情疑云(2003)
-32、2046(2004)
-33、暖暖内含光(2004)
-34、晚安，好运(2005)
-35、珍爱泉源(2006)
-36、血色将至(2007)
-37、赎罪(2007)
-38&39、控制 (2007)
-40&41&42、荒野生存(2007)
-43、耶稣基督(2008)
-44、珍爱(2009)"
-                </view>
+                <view class="list-desc">{{songsList.description}}</view>
             </view>
         </view>
+    </view>
+    <view class="list-part">
+        <view class="list-head">
+            <image src="../../images/play.png" />
+            <text>播放全部</text>
+            <text class="num">({{songsList.tracks.length}})</text>
+        </view>
+        <scroll-view scroll-y="true" class="listScroll">
+            <view class="scrollItem" wx:for="{{songsList.tracks}}" bindtap="toSongDetail"data-index="{{index}}" data-song="{{item}}" >
+                <text class="index">{{index+1}}</text>
+                <view class="songs-name">
+                    <text class="name">{{item.name}}</text>
+                    <text>{{item.ar[0].name}}</text>
+                </view>
+                <text class="iconfont icon-icon"></text>
+            </view>
+        </scroll-view>
     </view>
 </view>
