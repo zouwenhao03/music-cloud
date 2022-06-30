@@ -1,5 +1,50 @@
-<view class="search-page" >
-   <view class="serarch-head" >
-    <input type="text" />
+<view class="search-page">
+   <!-- 搜索框 -->
+   <view class="search-head">
+      <text class="iconfont icon-sousuo1 searchIcon"></text>
+      <input type="text" class="search-input" value="{{searhVal}}" bindinput="search" placeholder="{{defaultSearch}}" placeholder-class="placeholder"  />
+      <text class="iconfont icon-qingkong clear" bindtap="clearSearch"></text>
    </view>
+   <block wx:if="{{searchList.length}}">
+      <!-- 搜索内容展示 -->
+      <view class="showSearchContent">
+         <view class="searchContent">搜索内容：{{searchContent}}</view>
+         <view class="searchList">
+            <view class="searchItem van-ellipsis" wx:for="{{searchList}}" wx:key="id" >
+               <text class="iconfont icon-sousuo"></text>
+               <text bindtap="toSongDetail" id="{{item.id}}" class="content">{{item.name}}</text>
+            </view>
+         </view>
+      </view>
+   </block>
+   <!-- 搜索历史 -->
+   <block wx:else>
+      <view class="search-history">
+         <view class="title">历史</view>
+         <view class="items-container" wx:for="{{historySearch}}">{{item}}</view>
+         <view class="iconfont icon-shanchu delete" bindtap="handleDelete" wx:if="{{hishistorySearch.length>0}}"></view>
+      </view>
+      <van-tabs active="{{ active }}" bind:change="onChange" custom-class="van-tabs" line-width="0" nav-class="tab-nav" tab-class="vans-tab">
+         <van-tab title="热搜榜">
+            <view class="hot-part" >
+               <view class="item" wx:for="{{ hotSearchList}}" bindtap="goHotSearch" data-searchword="{{item.searchWord}}">
+                  <text class="order">{{index+1}}</text>
+                  <text class="song-name">{{item.searchWord}}</text>
+                  <image class="icon-img" wx:if="{{item.iconUrl}}" src="{{item.iconUrl}}"></image>
+               </view>
+            </view>
+         </van-tab>
+         <van-tab title="话题榜">
+             <view class="hot-part" >
+               <view class="item van-ellipsis" wx:for="{{ hotTopic}}">
+                  <text class="order">{{index+1}}</text>
+                  <text class="song-name">{{item.title}}</text>
+                  <image class="icon-img" wx:if="{{item.iconUrl}}" src="{{item.iconUrl}}"></image>
+               </view>
+            </view>
+         </van-tab>
+         <van-tab title="视频榜">内容 3</van-tab>
+         <van-tab title="播客榜">内容 3</van-tab>
+      </van-tabs>
+   </block>
 </view>

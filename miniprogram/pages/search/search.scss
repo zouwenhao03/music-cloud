@@ -1,0 +1,126 @@
+.search-page {
+  //background-color: #F7F7F7;
+  // width: 100vw;
+  // height: 100vh;
+  padding: 30rpx;
+  //padding-top: 20rpx;
+  .search-head {
+    height: 60rpx;
+    width: 100%;
+    //margin: 0 auto;
+    // margin-top: 20rpx;
+    border: 1rpx solid black;
+    border-radius: 30rpx;
+    background-color: rgb(237, 237, 237, 0.3);
+    background-color: #f7f7f7;
+    //padding: 20rpx;
+    display: flex;
+    align-items: center;
+    .iconfont {
+      font-size: 48rpx;
+      margin-left: 10rpx;
+      margin-right: 10rpx;
+      // line-height: 1.5;
+    }
+    .clear {
+      font-size: 32rpx;
+      background-color: rgb(255, 255, 255, 0.3);
+    }
+    .search-input {
+      flex: 1;
+      height: 100%;
+      // border: 1rpx solid red;
+    }
+  }
+  .search-history {
+    width: 100%;
+    margin-top: 30rpx;
+    display: flex;
+    position: relative;
+    // align-items: center;
+    .iconfont {
+      position: absolute;
+      right: 10rpx;
+      bottom: 20rpx;
+      font-size: 32rpx;
+    }
+    .title {
+      font-size: 32rpx;
+      font-weight: 500;
+      line-height: 62rpx;
+      margin-right: 20rpx;
+    }
+    .items-container {
+      font-size: 26rpx;
+      height: 50rpx;
+      line-height: 50rpx;
+      background: #ededed;
+      margin-left: 20rpx;
+      padding: 0 30rpx;
+      border-radius: 20rpx;
+      margin-bottom: 20rpx;
+    }
+  }
+  .vans-tab {
+    text-align: left !important;
+    font-size: 32rpx;
+    padding-left: 0;
+    flex: auto;
+  }
+  .tab-nav {
+    display: flex;
+    justify-content: space-around;
+  }
+  .hot-part {
+    padding: 10rpx;
+    width: 98%;
+    background-color: #fff;
+    border: 1rpx solid #eee;
+    border-radius: 10rpx;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .item {
+      min-width: 50%;
+      margin-bottom: 20rpx;
+      max-width: 50%;
+      .song-name {
+        font-weight: 500;
+        font-size: 32rpx;
+        color: #1a1a1a;
+      }
+      .order {
+        color: #808080;
+        font-size: 32rpx;
+        margin-right: 10rpx;
+      }
+      .icon-img {
+        width: 35rpx;
+        height: 20rpx;
+        margin-left: 10rpx;
+      }
+    }
+  }
+  //展示搜索结果
+  .searchContent {
+    color: rgb(147, 166, 229);
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 24rpx;
+    border-bottom: 1rpx solid #d43c33;
+  }
+  .searchItem {
+    height: 80rpx;
+    line-height: 80rpx;
+    display: flex;
+  }
+  .searchItem .content {
+    flex: 1;
+    margin-left: 20rpx;
+    border-bottom: 1rpx solid #eee;
+  }
+
+  .placeholder {
+    font-size: 28rpx;
+  }
+}

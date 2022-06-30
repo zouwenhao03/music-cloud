@@ -1,6 +1,9 @@
 /**app.wxss**/
-@import './iconfont/iconfont.wxss'; 
-
-Page{
-    overflow: scroll;
-  }
+@import './iconfont/iconfont.wxss';
+@import '/miniprogram_npm/@vant/weapp/common/index.wxss';
+Page {
+  overflow: scroll;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica,
+    Segoe UI, Arial, Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB', 'Microsoft Yahei',
+    sans-serif;
+}

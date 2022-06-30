@@ -1,8 +1,9 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/playList/playList",
     "pages/search/search",
+   
+    "pages/playList/playList",
     "pages/recomPlay/recomPlay",
     "pages/test/test",
     "pages/musicPlay/musicPlay",
@@ -18,7 +19,6 @@
     "navigationBarTitleText": "云音乐",
     "navigationBarTextStyle": "white"
   },
-  "style": "v2",
   "sitemapLocation": "sitemap.json",
   "tabBar": {
     "color": "#333",
