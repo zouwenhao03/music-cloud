@@ -15,3 +15,7 @@ export function getRecommendSongs(id:string){
 export function getTopList() {
     return service('/toplist/detail',{})
 }
+///personal_fm
+export function getPersonFm() {
+    return service('/personal_fm',{})
+}

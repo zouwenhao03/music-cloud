@@ -12,7 +12,8 @@
                     <image src="{{songsList.creator.avatarUrl}}" />
                     <text>{{songsList.creator.nickname}}</text>
                 </view>
-                <view class="list-desc">{{songsList.description}}</view>
+                <view class="list-desc" wx:if="{{songsList.description!==null}}">{{songsList.description}}</view>
+                <view class="list-desc" wx:if="{{songsList.description==null}}"></view>
             </view>
         </view>
     </view>

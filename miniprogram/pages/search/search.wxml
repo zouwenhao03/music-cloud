@@ -21,13 +21,13 @@
    <block wx:else>
       <view class="search-history">
          <view class="title">历史</view>
-         <view class="items-container" wx:for="{{historySearch}}">{{item}}</view>
+         <view class="items-container" wx:for="{{historySearch}}" wx:key="index">{{item}}</view>
          <view class="iconfont icon-shanchu delete" bindtap="handleDelete" wx:if="{{hishistorySearch.length>0}}"></view>
       </view>
       <van-tabs active="{{ active }}" bind:change="onChange" custom-class="van-tabs" line-width="0" nav-class="tab-nav" tab-class="vans-tab">
          <van-tab title="热搜榜">
             <view class="hot-part" >
-               <view class="item" wx:for="{{ hotSearchList}}" bindtap="goHotSearch" data-searchword="{{item.searchWord}}">
+               <view class="item" wx:for="{{ hotSearchList}}" wx:key="score" bindtap="goHotSearch" data-searchword="{{item.searchWord}}">
                   <text class="order">{{index+1}}</text>
                   <text class="song-name">{{item.searchWord}}</text>
                   <image class="icon-img" wx:if="{{item.iconUrl}}" src="{{item.iconUrl}}"></image>
@@ -36,7 +36,7 @@
          </van-tab>
          <van-tab title="话题榜">
              <view class="hot-part" >
-               <view class="item van-ellipsis" wx:for="{{ hotTopic}}">
+               <view class="item van-ellipsis" wx:for="{{ hotTopic}}"wx:key="actId">
                   <text class="order">{{index+1}}</text>
                   <text class="song-name">{{item.title}}</text>
                   <image class="icon-img" wx:if="{{item.iconUrl}}" src="{{item.iconUrl}}"></image>

@@ -53,13 +53,13 @@
     </view>
 </view>
 <!-- 个人中心 -->
-<view class="my-like">
-  <view class="like-img" >
-    <image src="../../images/personal/like.png" />
+<view class="my-like" bindtap="goMyLike">
+  <view  >
+    <image src="{{userPlaylist[0].coverImgUrl}}" class="like-img"/>
  </view>    
-  <view class="like-txt">
+  <view class="like-txt" >
         <text >我喜欢的音乐</text>
-        <text >0 首</text>
+        <text >{{userPlaylist[0].trackCount}} 首</text>
   </view>
   <view class="last">
     <view>❤动模式</view>

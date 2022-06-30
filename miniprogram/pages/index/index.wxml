@@ -22,11 +22,13 @@
   <view class="nav-part" hover-class="none" hover-stop-propagation="false">
     <view class="nav-item" bindtap='goRecom'>
       <text class="iconfont icon-tuijian"></text>
-      <text class="item-word">每日推荐</text>
+      <text class="item-word">每日推荐
+        <icon style="position:relative;" type="success" size="46"></icon>
+        </text>
     </view>
-    <view class="nav-item">
+    <view class="nav-item" bindtap = "getPersonFmData">
       <text class="iconfont icon-zhibo"></text>
-      <text class="item-word">直播</text>
+      <text class="item-word">私人FM</text>
     </view>
     <view class="nav-item">
       <text class="iconfont icon-diantai"></text>
@@ -57,7 +59,7 @@
     <swiper class="topList-swiper" next-margin="100rpx">
       <swiper-item class="top-item" wx:for="{{topList}}" wx:key="ToplistType" wx:if="{{item.tracks.length !==0}}">
         <view class="item-container">
-          <view class="top-name">{{item.name}}</view>
+          <view class="top-name" style="width: 550rpx; height: 82rpx; display: block; box-sizing: border-box">{{item.name}}</view>
           <view class="item-detail" wx:for="{{item.tracks}}" wx:key="index">
             <text class="item-index">{{index+1}}</text>
             <text class="item-name">{{item.first}}</text>

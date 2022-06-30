@@ -1,6 +1,6 @@
 // index.ts
 // 获取应用实例
-import { getBanner, getRecommend,getTopList } from "../../api/index";
+import { getBanner, getRecommend,getTopList, getPersonFm } from "../../api/index";
 const app = getApp<IAppOption>();
 
 Page({
@@ -17,6 +17,11 @@ Page({
       this.setData({topList:res.list})
      // console.log(this.data.topList)
     })
+  },
+  //私人fm
+  async getPersonFmData(){
+    let res = await getPersonFm()
+    console.log(res)
   },
 //跳转搜索页面
 goSearchPage(){

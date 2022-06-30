@@ -1,4 +1,4 @@
-import{getUserInfo} from '../../api/user'
+import{getUserInfo,getUserPlaylistApi} from '../../api/user'
 const app = getApp<IAppOption>();
 Page({
     data:{
@@ -7,7 +7,7 @@ Page({
         userId:null,
         years:0,
         level:0,
-        
+        userPlaylist:[]
     },
     onLoad(){
         if(wx.getStorageSync('userId')){
@@ -15,6 +15,7 @@ Page({
             let userId = wx.getStorageSync('userId')
             this.setData({userId:userId})
            if(this.data.userId){
+            this.getUserPlaylist()
             getUserInfo(this.data.userId).then((res:any)=>{
                 if(res.code==200){
                     this.setData({level:res.level})
@@ -29,6 +30,23 @@ Page({
             })
            }
         }
+    },
+    //goMyLike
+    goMyLike(){
+        let id = this.data.userPlaylist[0].id
+        wx.navigateTo({url:`/pages/playList/playList?listId=${id}`})
+    },
+    //获取用户信息
+    async getUserInfoData(){
+        let res = await  getUserInfo(this.data.userId)
+    },
+    //获取用户歌单
+    async getUserPlaylist(){
+        let res:any =  await getUserPlaylistApi(this.data.userId)
+        this.setData({
+            userPlaylist:res.playlist
+        })
+        console.log(res)
     },
     gologin(){
         wx.navigateTo({url:'/pages/login/login'})

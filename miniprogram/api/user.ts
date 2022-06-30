@@ -20,3 +20,7 @@ export function loginP(phone:string,pwd:string){
 export function getUserInfo(userId:string){
     return service(`/user/detail?uid=${userId}`,{})
 }
+//user/playlist 获取用户歌单
+export function getUserPlaylistApi(userId:string){
+    return service(`/user/playlist?uid=${userId}`,{})
+}
