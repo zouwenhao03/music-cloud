@@ -1,0 +1,26 @@
+<view class="video-page">
+    <van-tabs active="{{ active }}" custom-class="van-tabs" nav-class="video-nav" tab-class="video-tabs">
+        <van-tab title="推荐">
+            <!--  -->
+            <view class="video-item" wx:for="{{recomVideoList}}">
+                <view class="video-author">
+                    <image  src="{{item.data.creator.avatarUrl}}" /> 
+                    <text >{{item.data.creator.nickname}}</text>
+                </view>
+                <video src="{{item.data.urlInfo.url}}"></video>
+                <view class="video-desc van-ellipsis">{{item.data.title}}</view>
+            </view>
+        </van-tab>
+        <van-tab title="发现">
+             <view class="video-item" wx:for="{{coverVideoList}}">
+                <view class="video-author" >
+                    <image  src="{{item.data.creator.avatarUrl}}" /> 
+                    <text >{{item.data.creator.nickname}}</text>
+                </view>
+                <image src="{{item.data.coverUrl}}" wx:if="{{videoUrl==''}}" data-vid="{{item.data.vid}}" bindtap="playVideo"/>
+                <video src="{{videoUrl}}"  wx:if="{{videoUrl !==''}}"  poster="{{item.data.coverUrl}}"></video>
+                <view class="video-desc van-ellipsis">{{item.data.title}}</view>
+            </view>
+        </van-tab>
+    </van-tabs>
+</view>

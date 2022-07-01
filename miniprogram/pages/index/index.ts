@@ -61,5 +61,10 @@ goSearchPage(){
   goPlayList(e:any){
     let listId = e.currentTarget.dataset.listid
     wx.navigateTo({url:`/pages/playList/playList?listId=${listId}`})
+  },
+  //bananer页跳转
+  goBPlayList(e:any){
+    let listId = e.currentTarget.id
+    wx.navigateTo({url:`/pages/playList/playList?listId=${listId}`})
   }
 });
