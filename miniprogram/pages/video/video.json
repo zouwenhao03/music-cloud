@@ -1,5 +1,8 @@
 {
   "usingComponents": {
-    "navHeader":"../../components/navHeader/navHeader"
-  }
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-skeleton": "@vant/weapp/skeleton/index"
+  },
+  "onReachBottomDistance":50
 }
