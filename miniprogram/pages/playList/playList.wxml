@@ -18,7 +18,7 @@
         </view>
     </view>
     <view class="list-part">
-        <view class="list-head">
+        <view class="list-head" bindtap="playAll">
             <image src="../../images/play.png" />
             <text>播放全部</text>
             <text class="num">({{songsList.tracks.length}})</text>

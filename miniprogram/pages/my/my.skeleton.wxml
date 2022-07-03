@@ -1,0 +1,83 @@
+<!--
+此文件为开发者工具生成，生成时间: 2022/7/2 下午4:06:46
+使用方法：
+在 D:\Desktop\test\music-cloud\music-cloud\miniprogram\pages\my\my.wxml 引入模板
+
+```
+<import src="my.skeleton.wxml"/>
+<template is="skeleton" wx:if="{{loading}}" />
+```
+
+在 D:\Desktop\test\music-cloud\music-cloud\miniprogram\pages\my\my.wxss 中引入样式
+```
+@import "./my.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view class="my-part">
+      <view class="isLogin">
+        <view class="my-background">
+          <image class="sk-image"></image>
+        </view>
+        <view class="my-detail">
+          <view class="detail-container">
+            <view class="my-avatar">
+              <image class="sk-image"></image>
+            </view>
+            <view class="my-txt">
+              <text class="nickName sk-transparent sk-text-14-2857-443 sk-text" style="background-position-x: 50%;">只是小混蛋</text>
+              <view class="follow-part">
+                <view class="follow-num sk-transparent">
+                  4
+                  <text class="follow-txt sk-transparent sk-text-14-2857-284 sk-text" style="background-position-x: 50%;">关注</text>
+                </view>
+                <view class="follow-num sk-transparent">
+                  3
+                  <text class="follow-txt sk-transparent sk-text-14-2857-60 sk-text" style="background-position-x: 50%;">粉丝</text>
+                </view>
+                <view class="follow-num sk-transparent sk-text-14-2857-615 sk-text" style="background-position-x: 50%;">
+                  level.9
+                </view>
+              </view>
+              <view class="signature sk-transparent">
+                <text class="title sk-transparent sk-text-14-2857-767 sk-text">村龄:</text> 6年
+              </view>
+              <view class="signature sk-transparent">
+                <text class="title sk-transparent sk-text-14-2857-824 sk-text">性别:</text> 男
+              </view>
+              <view class="signature sk-transparent">
+                <text class="title sk-transparent sk-text-14-2857-864 sk-text">简讯:</text> 永远开心好难，只希望没空难过就好了。
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="my-like">
+        <view>
+          <image class="like-img sk-image"></image>
+        </view>
+        <view class="like-txt">
+          <text class="sk-transparent sk-text-14-2857-213 sk-text">我喜欢的音乐</text>
+          <text class="sk-transparent sk-text-14-2857-748 sk-text">342 首</text>
+        </view>
+        <view class="last">
+          <view class="sk-transparent sk-text-14-2857-822 sk-text" style="background-position-x: 50%;">❤动模式</view>
+        </view>
+      </view>
+      <view class="my-list">
+        <view class="list-1 sk-transparent sk-text-31-8182-911 sk-text">
+          我的收藏
+        </view>
+        <view class="list-1 sk-transparent sk-text-31-8182-402 sk-text">
+          我的电台
+        </view>
+        <view class="list-1 last sk-transparent sk-text-31-8182-678 sk-text">
+          我的歌单
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

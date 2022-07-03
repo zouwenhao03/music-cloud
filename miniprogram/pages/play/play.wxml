@@ -8,7 +8,7 @@
 <view class="play-wrapper">
 	<view class="play-title">
 		<view class="title-back" bindtap="backPage">
-			<image class="" src="../../image/play_back.png" />
+			<!-- <image class="" src="../../images/play_back.png" /> -->
 		</view>
 		<view class="singer-info">
 			<view class="title-songName">{{song.name}}</view>
@@ -42,7 +42,7 @@
 			 class="body-record"
 			 style="{{isPlay?'':'transform:rotate(-40deg)'}}"
 			 mode="aspectFit"
-			 src="../../image/play_stick.png"
+			 src="../../images/play_stick.png"
 			></image>
 			<view class="body-round  run" style="{{isPlay?'animation-play-state:running;':'animation-play-state:paused;'}}">
 
@@ -87,7 +87,7 @@
 		<view class="play_suspend">
 			<view class="icon_playing ">
 				<image
-				 src="../../image/play_lastSong.png"
+				 src="../../images/play_lastSong.png"
 				 class=" icon_play"
 				 bindtap="beforeSong"
 				/>
@@ -96,14 +96,14 @@
 			<view class="icon_playing">
 				<image
 				 bindtap="handleToggleBGAudio"
-				 src="../../image/play_suspend.png"
+				 src="../../images/play_suspend.png"
 				 hidden="{{!isPlay}}"
 				 class="img_play"
 				/>
 				<!--播放图标-->
 				<image
 				 bindtap="handleToggleBGAudio"
-				 src="../../image/play_play.png"
+				 src="../../images/play_play.png"
 				 hidden="{{isPlay}}"
 				 class="img_play"
 				/>
@@ -111,7 +111,7 @@
 			<!-- 下一首歌 -->
 			<view class="icon_playing ">
 				<image
-				 src="../../image/play_nextSong.png"
+				 src="../../images/play_nextSong.png"
 				 class="icon_play"
 				 bindtap="nextSong"
 				/>

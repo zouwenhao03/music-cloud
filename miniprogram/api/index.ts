@@ -1,6 +1,6 @@
 import service from "../utils/request";
 export function getBanner() {
-    return service('/banner',{})
+    return service('/banner?type=2',{})
 }
 //获取每日推荐
 

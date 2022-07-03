@@ -35,6 +35,18 @@ Page({
             pubsub.publish('songId',songId)
         })
     },
+    //
+    playAll() {
+        let songs = this.data.recommendList
+        let musicId = songs[0].id
+        for (let i = 1; i < songs.length; i++) {
+          app.globalData.waitForPlaying.push(songs[i].id)
+        }
+        // 跳转到播放页面
+        wx.navigateTo({
+          url: `../play/play?id=${musicId}`,
+        })
+      },
     //更新时间
     getTime(){
         let date = new Date();
@@ -48,7 +60,7 @@ Page({
         this.setData({
             index
         })
-        wx.navigateTo({url:`/pages/musicPlay/musicPlay?id=${id}`})
+        wx.navigateTo({url:`/pages/play/play?id=${id}`})
     },
     //获取歌曲列表
     getDayRecom() {

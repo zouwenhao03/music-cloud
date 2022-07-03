@@ -1,0 +1,77 @@
+<!--
+此文件为开发者工具生成，生成时间: 2022/7/2 下午4:06:23
+使用方法：
+在 D:\Desktop\test\music-cloud\music-cloud\miniprogram\pages\video\video.wxml 引入模板
+
+```
+<import src="video.skeleton.wxml"/>
+<template is="skeleton" wx:if="{{loading}}" />
+```
+
+在 D:\Desktop\test\music-cloud\music-cloud\miniprogram\pages\video\video.wxss 中引入样式
+```
+@import "./video.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view class="video-page">
+      <view is="miniprogram_npm/@vant/weapp/tabs/index">
+        <view class="van-tabs van-tabs tabs-index--van-tabs van-tabs--line tabs-index--van-tabs--line">
+          <view is="miniprogram_npm/@vant/weapp/sticky/index">
+            <view class=" van-sticky sticky-index--van-sticky" style="z-index:1">
+              <view class="van-sticky-wrap sticky-index--van-sticky-wrap" style="z-index:1">
+                <view class="van-tabs__wrap tabs-index--van-tabs__wrap">
+                  <scroll-view class="van-tabs__scroll tabs-index--van-tabs__scroll van-tabs__scroll--line tabs-index--van-tabs__scroll--line" scroll-left="0" style="true">
+                    <view class="van-tabs__nav tabs-index--van-tabs__nav van-tabs__nav--line tabs-index--van-tabs__nav--line video-nav" style="true">
+                      <view class="van-tabs__line tabs-index--van-tabs__line" style="width:40px;transform:translateX(78px);-webkit-transform:translateX(78px);transition-duration:0.3s;-webkit-transition-duration:0.3s"></view>
+                      <view class="video-tabs  van-ellipsis tabs-index--van-ellipsis van-tab tabs-index--van-tab van-tab--active tabs-index--van-tab--active" data-index="0" style="true">
+                        <view class="van-ellipsis tabs-index--van-ellipsis sk-transparent sk-text-30-6818-216 sk-text" style="background-position-x: 50%;">
+                          推荐
+                        </view>
+                      </view>
+                      <view class="video-tabs van-ellipsis tabs-index--van-ellipsis van-tab tabs-index--van-tab" data-index="1" style="true">
+                        <view class="van-ellipsis tabs-index--van-ellipsis sk-transparent sk-text-30-6818-671 sk-text" style="background-position-x: 50%;">
+                          发现
+                        </view>
+                      </view>
+                    </view>
+                  </scroll-view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="van-tabs__content tabs-index--van-tabs__content">
+            <view class="van-tabs__track tabs-index--van-tabs__track van-tabs__track tabs-index--van-tabs__track" style="true">
+              <view is="miniprogram_npm/@vant/weapp/tab/index">
+                <view class=" van-tab__pane tab-index--van-tab__pane van-tab__pane--active tab-index--van-tab__pane--active" style="true">
+                  <view class="video-item">
+                    <view class="video-author">
+                      <image class="sk-image"></image>
+                      <text class="sk-transparent sk-text-14-2857-395 sk-text">音丸丸</text>
+                    </view>
+                    <view src="http://vodkgeyttp9.vod.126.net/cloudmusic/FAI407uX_2769282143_hd.mp4?ts=1656752762&amp;rid=ED10813DF19EB865F4D34B96090F8655&amp;rl=3&amp;rs=eWNQAbDqgyHjxYwDiZrWchMFCGyNOJRe&amp;sign=93e2f30bb61230ed1c3654971147814f&amp;ext=qTdQq8odm6JtwhafE3f8IiGudCY7GB%2BEwbY920GhpodIDlwjfP3th7b%2FkbkbdMQo3a86zo%2B1jNa4Tvfc1jVIsJL%2BvyogPUs9mYtRJu6Qcjr5695%2FUk4ZJqiu1WiQKXPgZXQvyDDokspjoxo%2BKkPvA02ef45GvnQdfTVlqSGhkj2gKYQZkWWuCeQwRJmOZrGiL9pNfNjOXe6gylowSTdjHZRNEyliu5qXc56h3nJrCFoJ9bQrRFsUWguv9l1Ck8x5"
+                      unit-id="true" class="sk-transparent sk-text--Infinity-108 sk-text sk-image">00:17</view>
+                    <view class="video-desc van-ellipsis sk-transparent sk-text-14-2857-317 sk-text">木叶十二忍</view>
+                  </view>
+                  <view class="video-item">
+                    <view class="video-author">
+                      <image class="sk-image"></image>
+                      <text class="sk-transparent sk-text-14-2857-399 sk-text">视频不间歇</text>
+                    </view>
+                    <view src="http://vodkgeyttp9.vod.126.net/vodkgeyttp8/Jh5BBSOm_26511309_sd.mp4?ts=1656752762&amp;rid=ED10813DF19EB865F4D34B96090F8655&amp;rl=3&amp;rs=AwactEFDJVzBRNJoeYVuTzSZhKKZrTRg&amp;sign=26acc9dc1542fdbf30de9eae3a79759b&amp;ext=qTdQq8odm6JtwhafE3f8IiGudCY7GB%2BEwbY920GhpodIDlwjfP3th7b%2FkbkbdMQo3a86zo%2B1jNa4Tvfc1jVIsJL%2BvyogPUs9mYtRJu6Qcjr5695%2FUk4ZJqiu1WiQKXPgZXQvyDDokspjoxo%2BKkPvA02ef45GvnQdfTVlqSGhkj2gKYQZkWWuCeQwRJmOZrGiL9pNfNjOXe6gylowSTdjHZRNEyliu5qXc56h3nJrCFoJ9bQrRFsUWguv9l1Ck8x5"
+                      unit-id="true" class="sk-transparent sk-text--Infinity-112 sk-text sk-image">01:55</view>
+                    <view class="video-desc van-ellipsis sk-transparent sk-text-14-2857-799 sk-text">可爱宝宝练跆拳道！哎呀！萌翻了！</view>
+                  </view>
+                  <view class="video-item"></view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

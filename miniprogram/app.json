@@ -1,10 +1,9 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/search/search",
-   
-    "pages/playList/playList",
     "pages/recomPlay/recomPlay",
+    "pages/search/search",
+    "pages/playList/playList",
     "pages/test/test",
     "pages/musicPlay/musicPlay",
     "pages/my/my",

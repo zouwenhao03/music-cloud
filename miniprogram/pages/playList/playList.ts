@@ -1,5 +1,6 @@
 import {getRecommendSongs} from '../../api/index'
 import pubsub from 'pubsub-js'
+const app = getApp<IAppOption>();
 Page({
     data:{
         listId:'',//歌单列表的id
@@ -43,6 +44,18 @@ Page({
        })
        console.log(songsList,20)
     },
+    playAll() {
+        let playlist = this.data.songsList.tracks
+        console.log(playlist);
+        let musicId = playlist[0].id
+        for (let i = 1; i < playlist.length; i++) {
+          app.globalData.waitForPlaying.push(playlist[i].id)
+        }
+        // 跳转到播放页面
+        wx.navigateTo({
+          url: `/pages/play/play?id=${musicId}`,
+        })
+      },
     //跳往播放页面
     toSongDetail(e:any){
         let id = e.currentTarget.dataset.song.id
@@ -50,6 +63,6 @@ Page({
         this.setData({
             index
         })
-        wx.navigateTo({url:`/pages/musicPlay/musicPlay?id=${id}`})
+        wx.navigateTo({url:`/pages/play/play?id=${id}`})
     }
 })

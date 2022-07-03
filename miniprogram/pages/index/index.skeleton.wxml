@@ -1,0 +1,117 @@
+<!--
+此文件为开发者工具生成，生成时间: 2022/7/2 下午4:06:33
+使用方法：
+在 D:\Desktop\test\music-cloud\music-cloud\miniprogram\pages\index\index.wxml 引入模板
+
+```
+<import src="index.skeleton.wxml"/>
+<template is="skeleton" wx:if="{{loading}}" />
+```
+
+在 D:\Desktop\test\music-cloud\music-cloud\miniprogram\pages\index\index.wxss 中引入样式
+```
+@import "./index.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view class="index-container">
+      <view class="search-part">
+        <image class="logo-img sk-image" lazy-load="true" mode="aspectFit|aspectFill|widthFix"></image>
+        <view class="search-input sk-transparent sk-text-28-7879-152 sk-text" style="background-position-x: 50%;">搜索歌曲</view>
+        <image class="logo-img sk-image" lazy-load="true" mode="aspectFit|aspectFill|widthFix"></image>
+      </view>
+      <view class="swiper-container">
+        <swiper autoplay="false" indicator-dots="true" class="swiper" indicator-active-color="#C62F2F" current="0">
+          <swiper-item class="item" id="1960605228" style="position: absolute; width: 100%; height: 100%; transform: translate(0%, 0px) translateZ(0px);">
+            <view class="swiper-item object Object">
+              <image class="sk-image"></image>
+            </view>
+          </swiper-item>
+        </swiper>
+      </view>
+      <view class="nav-part" hover-class="none" hover-stop-propagation="true">
+        <view class="nav-item">
+          <text class="iconfont icon-tuijian sk-pseudo sk-pseudo-circle"></text>
+          <text class="item-word sk-transparent sk-text-14-2857-821 sk-text" style="background-position-x: 50%;">每日推荐
+        </text>
+        </view>
+        <view class="nav-item">
+          <text class="iconfont icon-zhibo sk-pseudo sk-pseudo-circle"></text>
+          <text class="item-word sk-transparent sk-text-14-2857-446 sk-text" style="background-position-x: 50%;">私人FM</text>
+        </view>
+        <view class="nav-item">
+          <text class="iconfont icon-diantai sk-pseudo sk-pseudo-circle"></text>
+          <text class="item-word sk-transparent sk-text-14-2857-507 sk-text" style="background-position-x: 50%;">电台</text>
+        </view>
+        <view class="nav-item">
+          <text class="iconfont icon-paixingbang sk-pseudo sk-pseudo-circle"></text>
+          <text class="item-word sk-transparent sk-text-14-2857-784 sk-text" style="background-position-x: 50%;">排行榜</text>
+        </view>
+        <view class="nav-item">
+          <text class="iconfont icon-icon- sk-pseudo sk-pseudo-circle"></text>
+          <text class="item-word sk-transparent sk-text-14-2857-891 sk-text" style="background-position-x: 50%;">歌单</text>
+        </view>
+      </view>
+      <view class="suggest-part">
+        <view is="components/navHeader/navHeader">
+          <view class="navHeader--nav-header">
+            <view class="navHeader--nav-title sk-transparent sk-text-30-6818-392 sk-text">
+              推荐歌曲
+            </view>
+            <view class="navHeader--nav-item sk-transparent">
+              为你精心的推荐
+              <text class="navHeader--more sk-transparent sk-text-14-2857-823 sk-text"> 更多</text>
+            </view>
+          </view>
+        </view>
+        <scroll-view class="suggest-scroll" enable-flex="true" scroll-x="true">
+          <view class="scroll-item" data-listid="5051447966">
+            <image class="item-img sk-image"></image>
+            <text class="item-text sk-transparent sk-text-0-0000-138 sk-text">如果你还在就好了</text>
+          </view>
+          <view class="scroll-item" data-listid="2411629173">
+            <image class="item-img sk-image"></image>
+            <text class="item-text sk-transparent sk-text-0-0000-827 sk-text">温柔英文歌-睡觉专用</text>
+          </view>
+          <view class="scroll-item" data-listid="2982252440">
+            <image class="item-img sk-image"></image>
+            <text class="item-text sk-transparent sk-text-0-0000-985 sk-text">你是自己永远的伴侣 请照顾好自己</text>
+          </view>
+          <view class="scroll-item" data-listid="2290267281">
+            <image class="item-img sk-image"></image>
+            <text class="item-text sk-transparent sk-text-0-0000-378 sk-text">适合学习睡觉时听的歌</text>
+          </view>
+        </scroll-view>
+      </view>
+      <view class="topList-part">
+        <view is="components/navHeader/navHeader">
+          <view class="navHeader--nav-header">
+            <view class="navHeader--nav-title sk-transparent sk-text-30-6818-686 sk-text">
+              排行榜
+            </view>
+            <view class="navHeader--nav-item sk-transparent">
+              热歌风向标
+              <text class="navHeader--more sk-transparent sk-text-14-2857-895 sk-text"> 更多</text>
+            </view>
+          </view>
+        </view>
+        <swiper class="topList-swiper" next-margin="100rpx" current="0" autoplay="false">
+          <swiper-item class="top-item" style="position: absolute; width: 100%; height: 100%; transform: translate(0%, 0px) translateZ(0px);">
+            <view class="item-container">
+              <view class="top-name sk-transparent sk-text-28-1818-600 sk-text" style="width: 303px; height: 45px; display: block; box-sizing: border-box; background-position-x: 50%;">飙升榜</view>
+              <view class="item-detail">
+                <text class="item-index sk-transparent sk-opacity">1</text>
+                <text class="item-name sk-transparent sk-text-14-2857-488 sk-text">东方之珠</text>
+                <text class="item-art sk-transparent sk-text-14-2857-568 sk-text">罗大佑</text>
+              </view>
+              <view class="item-detail"></view>
+            </view>
+          </swiper-item>
+        </swiper>
+      </view>
+    </view>
+  </view>
+</template>

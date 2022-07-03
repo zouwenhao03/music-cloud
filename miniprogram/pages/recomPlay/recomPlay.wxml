@@ -12,7 +12,7 @@
   <!-- 列表区域 -->
   <view class="ListContainer">
     <view class="listHeader">
-      <text>播放全部</text>
+      <text bindtap="playAll">播放全部</text>
       <text class="changeMore">多选</text>
     </view>
     <!-- 歌曲 -->

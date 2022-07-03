@@ -1,0 +1,99 @@
+<!--
+此文件为开发者工具生成，生成时间: 2022/7/2 下午4:05:47
+使用方法：
+在 D:\Desktop\test\music-cloud\music-cloud\miniprogram\pages\playList\playList.wxml 引入模板
+
+```
+<import src="playList.skeleton.wxml"/>
+<template is="skeleton" wx:if="{{loading}}" />
+```
+
+在 D:\Desktop\test\music-cloud\music-cloud\miniprogram\pages\playList\playList.wxss 中引入样式
+```
+@import "./playList.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view class="playList-page">
+      <view class="heade-part">
+        <image class="bac-img sk-image"></image>
+        <view class="heade-container">
+          <view>
+            <image class="sk-image"></image>
+          </view>
+          <view class="right-part">
+            <text class="title sk-transparent sk-text-14-2857-390 sk-text">只是小混蛋喜欢的音乐</text>
+            <view class="author">
+              <image class="sk-image"></image>
+              <text class="sk-transparent sk-text-14-2857-376 sk-text">只是小混蛋</text>
+            </view>
+            <view class="list-desc"></view>
+          </view>
+        </view>
+      </view>
+      <view class="list-part">
+        <view class="list-head">
+          <image class="sk-image"></image>
+          <text class="sk-transparent sk-text-14-2857-702 sk-text">播放全部</text>
+          <text class="num sk-transparent sk-text-14-2857-935 sk-text">(342)</text>
+        </view>
+        <scroll-view class="listScroll" scroll-y="true">
+          <view class="scrollItem" data-index="0" data-song="[object Object]">
+            <text class="index sk-transparent sk-opacity">1</text>
+            <view class="songs-name">
+              <text class="name sk-transparent sk-text-14-2857-952 sk-text">都一样</text>
+              <text class="sk-transparent sk-text-14-2857-431 sk-text">李荣浩</text>
+            </view>
+            <text class="iconfont icon-icon sk-pseudo sk-pseudo-circle"></text>
+          </view>
+          <view class="scrollItem" data-index="1" data-song="[object Object]">
+            <text class="index sk-transparent sk-opacity">2</text>
+            <view class="songs-name">
+              <text class="name sk-transparent sk-text-14-2857-506 sk-text">最冷一天</text>
+              <text class="sk-transparent sk-text-14-2857-55 sk-text">张国荣</text>
+            </view>
+            <text class="iconfont icon-icon sk-pseudo sk-pseudo-circle"></text>
+          </view>
+          <view class="scrollItem" data-index="2" data-song="[object Object]">
+            <text class="index sk-transparent sk-opacity">3</text>
+            <view class="songs-name">
+              <text class="name sk-transparent sk-text-14-2857-804 sk-text">我在昨天的梦里又看见了你（demo）</text>
+              <text class="sk-transparent sk-text-14-2857-133 sk-text">枯木逢春</text>
+            </view>
+            <text class="iconfont icon-icon sk-pseudo sk-pseudo-circle"></text>
+          </view>
+          <view class="scrollItem" data-index="3" data-song="[object Object]">
+            <text class="index sk-transparent sk-opacity">4</text>
+            <view class="songs-name">
+              <text class="name sk-transparent sk-text-14-2857-211 sk-text">情话</text>
+              <text class="sk-transparent sk-text-14-2857-201 sk-text">余佳运</text>
+            </view>
+            <text class="iconfont icon-icon sk-pseudo sk-pseudo-circle"></text>
+          </view>
+          <view class="scrollItem" data-index="4" data-song="[object Object]">
+            <text class="index sk-transparent sk-opacity">5</text>
+            <view class="songs-name">
+              <text class="name sk-transparent sk-text-14-2857-877 sk-text">Song F</text>
+              <text class="sk-transparent sk-text-14-2857-846 sk-text">达达乐队</text>
+            </view>
+            <text class="iconfont icon-icon sk-pseudo sk-pseudo-circle"></text>
+          </view>
+          <view class="scrollItem" data-index="5" data-song="[object Object]">
+            <text class="index sk-transparent sk-opacity">6</text>
+            <view class="songs-name">
+              <text class="name sk-transparent sk-text-14-2857-562 sk-text">Coffee's On Me</text>
+              <text class="sk-transparent sk-text-14-2857-812 sk-text">落日飞车</text>
+            </view>
+            <text class="iconfont icon-icon sk-pseudo sk-pseudo-circle"></text>
+          </view>
+          <view class="scrollItem" data-index="6" data-song="[object Object]">
+            <text class="iconfont icon-icon sk-pseudo sk-pseudo-circle"></text>
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+</template>
